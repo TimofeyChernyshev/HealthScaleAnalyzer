@@ -26,23 +26,15 @@ type AnalyzedPerson struct {
 	BMICategory BMICategory
 }
 
-func (r *ReportInfo) AnalyzePerson(p *Person, maleBMI, femaleBMI *BMIConfig) {
+func (r *ReportInfo) AnalyzePerson(p *Person, configBMI *BMIConfig) {
 	age := time.Now().Year() - p.BirthDate.Year()
 	if time.Now().YearDay() < p.BirthDate.YearDay() {
 		age--
 	}
 
-	var config *BMIConfig
-	// На русском языке пол можно определить по отчеству
-	if strings.HasSuffix(p.Name, "ич") {
-		config = maleBMI
-	} else {
-		config = femaleBMI
-	}
-
 	// bmi = вес/рост(м)^2, p.Height - рост в см
 	bmi := p.Weight / (p.Height * p.Height * 1_0000.0)
-	bmiCategory := categorizeBMI(bmi, age, config)
+	bmiCategory := categorizeBMI(bmi, age, configBMI)
 
 	analyzed := AnalyzedPerson{
 		Name:        p.Name,
