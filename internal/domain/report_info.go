@@ -33,7 +33,8 @@ func (r *ReportInfo) AnalyzePerson(p *Person, configBMI *BMIConfig) {
 	}
 
 	// bmi = вес/рост(м)^2, p.Height - рост в см
-	bmi := p.Weight / (p.Height * p.Height * 1_0000.0)
+	bmi := (p.Weight * 1_0000.0) / (p.Height * p.Height)
+
 	bmiCategory := categorizeBMI(bmi, age, configBMI)
 
 	analyzed := AnalyzedPerson{
