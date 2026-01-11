@@ -1,7 +1,6 @@
 package application
 
 import (
-	"fmt"
 	"io"
 	"strings"
 
@@ -20,15 +19,15 @@ func NewHealthService(p Parser, l ConfigLoader, e Exporter) *HealthService {
 	return &HealthService{parser: p, configLoader: l, exporter: e}
 }
 
-func (s *HealthService) CreateReport(filePaths []string) (*domain.ReportInfo, error) {
+func (s *HealthService) CreateReport(filePaths []string) (*domain.ReportInfo, []error) {
 	persons, errors := s.parser.ParseFiles(filePaths)
 	if len(errors) != 0 {
-		fmt.Println(errors)
+		return nil, errors
 	}
 
 	maleBMI, femaleBMI, err := s.configLoader.LoadBMIConfig()
 	if err != nil {
-		return nil, err
+		return nil, []error{err}
 	}
 
 	reportInfo := domain.NewReportInfo()
