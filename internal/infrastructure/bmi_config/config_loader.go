@@ -18,7 +18,7 @@ func NewBMIConfigLoader() BMIConfigLoader {
 }
 
 // LoadBMIConfig загружает конфиг из embed файлов
-func (l BMIConfigLoader) LoadBMIConfig() (configMale, configFemale *domain.BMIConfig, err error) {
+func (l BMIConfigLoader) LoadBMIConfig() (*domain.BMIConfig, *domain.BMIConfig, error) {
 	maleFile := "bmi_male.json"
 	femaleFile := "bmi_female.json"
 
@@ -26,7 +26,9 @@ func (l BMIConfigLoader) LoadBMIConfig() (configMale, configFemale *domain.BMICo
 	if err != nil {
 		return nil, nil, fmt.Errorf("не удалось загрузить конфиг %s: %w", maleFile, err)
 	}
-	if err := json.Unmarshal(data, configMale); err != nil {
+
+	var configMale domain.BMIConfig
+	if err := json.Unmarshal(data, &configMale); err != nil {
 		return nil, nil, fmt.Errorf("ошибка парсинга конфига %s: %w", maleFile, err)
 	}
 
@@ -34,9 +36,11 @@ func (l BMIConfigLoader) LoadBMIConfig() (configMale, configFemale *domain.BMICo
 	if err != nil {
 		return nil, nil, fmt.Errorf("не удалось загрузить конфиг %s: %w", femaleFile, err)
 	}
-	if err := json.Unmarshal(data, configFemale); err != nil {
+
+	var configFemale domain.BMIConfig
+	if err := json.Unmarshal(data, &configFemale); err != nil {
 		return nil, nil, fmt.Errorf("ошибка парсинга конфига %s: %w", femaleFile, err)
 	}
 
-	return configMale, configFemale, nil
+	return &configMale, &configFemale, nil
 }
