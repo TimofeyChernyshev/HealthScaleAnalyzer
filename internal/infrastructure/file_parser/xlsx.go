@@ -40,7 +40,7 @@ func (p *ExcelParser) ParseFiles(filePaths []string) ([]*domain.Person, []error)
 	for _, filePath := range filePaths {
 		people, err := p.parse(filePath)
 		if err != nil {
-			slog.Warn("error parsing file '%s': %w\n", filepath.Base(filePath), err)
+			slog.Warn("error parsing file", "file", filepath.Base(filePath), "err", err)
 			errors = append(errors, err)
 			continue
 		}
@@ -94,6 +94,7 @@ func (p *ExcelParser) parseSheet(f *excelize.File, sheetName string) ([]*domain.
 	for i := 1; i < len(rows); i++ {
 		person, err := p.parseRow(rows[i], colIndexes, i+1)
 		if err != nil {
+			slog.Warn("cannot parse row", "row", i+1, "err", err)
 			continue
 		}
 		people = append(people, person)
@@ -108,7 +109,6 @@ func (p *ExcelParser) mapColumns(headers []string) map[string]int {
 
 	for i, header := range headers {
 		header = normalizeHeader(header)
-		fmt.Println(header)
 
 		switch {
 		case strings.Contains(header, "фио"), strings.Contains(header, "fullName"):
@@ -224,27 +224,4 @@ func (p *ExcelParser) parseDate(dateStr string) (time.Time, error) {
 	}
 
 	return time.Time{}, fmt.Errorf("неизвестный формат даты: %s", dateStr)
-}
-
-// ValidateFile проверяет файл перед парсингом
-func (p *ExcelParser) ValidateFile(filePath string) error {
-	// Проверяем расширение
-	ext := filepath.Ext(filePath)
-	if ext != ".xlsx" && ext != ".xls" {
-		return fmt.Errorf("неподдерживаемый формат файла: %s", ext)
-	}
-
-	// Пробуем открыть файл
-	f, err := excelize.OpenFile(filePath)
-	if err != nil {
-		return fmt.Errorf("файл поврежден или не является Excel: %v", err)
-	}
-	defer f.Close()
-
-	// Проверяем, есть ли листы
-	if sheets := f.GetSheetList(); len(sheets) == 0 {
-		return fmt.Errorf("файл не содержит листов")
-	}
-
-	return nil
 }
