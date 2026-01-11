@@ -1,0 +1,15 @@
+{
+  "gender": "male",
+  "ranges": [
+    {"min_age": 0, "max_age": 3, "serious_under": 14.4, "light_under": 15.1, "normal": 16.3, "overweight": 18.6, "obese": 19.4},
+    {"min_age": 4, "max_age": 5, "serious_under": 13.8, "light_under": 15.0, "normal": 15.6, "overweight": 17.2, "obese": 17.8},
+    {"min_age": 6, "max_age": 7, "serious_under": 13.6, "light_under": 14.0, "normal": 15.2, "overweight": 17.5, "obese": 18.4},
+    {"min_age": 8, "max_age": 9, "serious_under": 13.7, "light_under": 14.1, "normal": 15.8, "overweight": 18.7, "obese": 20.1},
+    {"min_age": 10, "max_age": 11, "serious_under": 13.9, "light_under": 14.6, "normal": 16.5, "overweight": 20.3, "obese": 22.1},
+    {"min_age": 12, "max_age": 13, "serious_under": 14.5, "light_under": 15.3, "normal": 17.8, "overweight": 22.4, "obese": 24.3},
+    {"min_age": 14, "max_age": 15, "serious_under": 15.7, "light_under": 16.3, "normal": 19.2, "overweight": 23.9, "obese": 26.0},
+    {"min_age": 16, "max_age": 17, "serious_under": 16.8, "light_under": 17.8, "normal": 20.5, "overweight": 25.3, "obese": 27.5},
+    {"min_age": 18, "max_age": 19, "serious_under": 17.9, "light_under": 18.9, "normal": 21.8, "overweight": 26.8, "obese": 28.9},
+    {"min_age": 20, "max_age": 1000, "serious_under": 18.4, "light_under": 20.0, "normal": 23.0, "overweight": 27.9, "obese": 30.5}
+  ]
+}
