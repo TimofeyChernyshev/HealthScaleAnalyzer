@@ -9,3 +9,5 @@ var (
 	Fourth HealthGroup = 4
 	Fifth  HealthGroup = 5
 )
+
+var AvailableHealthGroups = []HealthGroup{First, Second, Third, Fourth, Fifth}

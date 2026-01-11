@@ -9,3 +9,5 @@ var (
 	OverWeight   BMICategory = "Лишний вес"
 	Obese        BMICategory = "Ожирение"
 )
+
+var AvailableBMICategories = []BMICategory{SeriousUnder, LightUnder, Normal, OverWeight, Obese}
