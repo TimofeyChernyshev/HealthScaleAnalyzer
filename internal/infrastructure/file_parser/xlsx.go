@@ -87,6 +87,10 @@ func (p *ExcelParser) parseSheet(f *excelize.File, sheetName string) ([]*domain.
 		return nil, fmt.Errorf("ошибка чтения листа '%s': %w", sheetName, err)
 	}
 
+	if len(rows) == 0 {
+		return nil, nil
+	}
+
 	headerRow := rows[0]
 	colIndexes := p.mapColumns(headerRow)
 
