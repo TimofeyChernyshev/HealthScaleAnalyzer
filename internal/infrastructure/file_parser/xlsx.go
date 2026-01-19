@@ -102,6 +102,7 @@ func (p *ExcelParser) parseSheet(f *excelize.File, sheetName string) ([]*domain.
 			slog.Warn("cannot parse row", "row", i+1, "err", err)
 			continue
 		}
+		person.Group = sheetName // Номер класса написан в названии листа
 		people = append(people, person)
 	}
 

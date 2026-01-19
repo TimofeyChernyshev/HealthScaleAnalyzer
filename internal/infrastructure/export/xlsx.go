@@ -28,6 +28,7 @@ func (e XlsxExporter) Export(report *domain.ReportInfo, writer io.WriteCloser) e
 		"ФИО",
 		"Индекс массы тела",
 		"Оценка индекса",
+		"Класс",
 	}
 
 	for col, h := range headers {
@@ -42,6 +43,7 @@ func (e XlsxExporter) Export(report *domain.ReportInfo, writer io.WriteCloser) e
 			item.Name,
 			item.BMI,
 			item.BMICategory,
+			item.Group,
 		}
 
 		for colIndex, v := range values {

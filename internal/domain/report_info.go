@@ -24,6 +24,7 @@ type AnalyzedPerson struct {
 	Name        string
 	BMI         float64
 	BMICategory BMICategory
+	Group       string // Классс или группа обучающегося
 }
 
 func (r *ReportInfo) AnalyzePerson(p *Person, configBMI *BMIConfig) {
@@ -41,6 +42,7 @@ func (r *ReportInfo) AnalyzePerson(p *Person, configBMI *BMIConfig) {
 		Name:        p.Name,
 		BMI:         bmi,
 		BMICategory: bmiCategory,
+		Group:       p.Group,
 	}
 	r.AnalyzedPersons = append(r.AnalyzedPersons, analyzed)
 

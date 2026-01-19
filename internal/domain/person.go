@@ -9,4 +9,5 @@ type Person struct {
 	Height        float64
 	HealthGroup   string
 	PhysicalGroup string
+	Group         string
 }
