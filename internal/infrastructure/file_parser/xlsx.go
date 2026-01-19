@@ -28,6 +28,7 @@ func NewExcelParser() *ExcelParser {
 			"01/02/2006",
 			"01.02.2006",
 			"01-02-2006",
+			"01-02-06",
 		},
 	}
 }
@@ -169,6 +170,7 @@ func (p *ExcelParser) parseRow(row []string, colIndexes map[string]int, rowNum i
 			if err == nil {
 				person.BirthDate = birthDate
 			}
+			fmt.Println(birthDate)
 		}
 	}
 
@@ -201,7 +203,7 @@ func (p *ExcelParser) parseRow(row []string, colIndexes map[string]int, rowNum i
 	}
 
 	if person.Name == "" {
-		return nil, fmt.Errorf("строка %d: отсутствуют ФИО", rowNum)
+		return nil, fmt.Errorf("строка %d: отсутствует ФИО", rowNum)
 	}
 
 	if person.Weight <= 0 || person.Height <= 0 {
