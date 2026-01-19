@@ -170,7 +170,6 @@ func (p *ExcelParser) parseRow(row []string, colIndexes map[string]int, rowNum i
 			if err == nil {
 				person.BirthDate = birthDate
 			}
-			fmt.Println(birthDate)
 		}
 	}
 
