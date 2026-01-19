@@ -1,15 +1,23 @@
 {
-  "gender": "female",
+  "gender": "male",
   "ranges": [
-    {"min_age": 0, "max_age": 3, "serious_under": 14.0, "light_under": 15.0, "normal": 16.5, "overweight": 18.0, "obese": 19.1},
-    {"min_age": 4, "max_age": 5, "serious_under": 13.6, "light_under": 14.5, "normal": 16.0, "overweight": 17.5, "obese": 18.0},
-    {"min_age": 6, "max_age": 7, "serious_under": 13.0, "light_under": 14.0, "normal": 15.1, "overweight": 16.8, "obese": 18.7},
-    {"min_age": 8, "max_age": 9, "serious_under": 13.1, "light_under": 14.1, "normal": 15.8, "overweight": 18.1, "obese": 20.1},
-    {"min_age": 10, "max_age": 11, "serious_under": 13.7, "light_under": 14.5, "normal": 16.8, "overweight": 20.0, "obese": 23.0},
-    {"min_age": 12, "max_age": 13, "serious_under": 14.6, "light_under": 15.4, "normal": 18.0, "overweight": 21.7, "obese": 25.2},
-    {"min_age": 14, "max_age": 15, "serious_under": 15.5, "light_under": 16.3, "normal": 19.1, "overweight": 23.2, "obese": 27.1},
-    {"min_age": 16, "max_age": 17, "serious_under": 16.3, "light_under": 17.4, "normal": 20.5, "overweight": 24.6, "obese": 28.9},
-    {"min_age": 18, "max_age": 19, "serious_under": 17.0, "light_under": 18.2, "normal": 21.4, "overweight": 25.8, "obese": 30.2},
-    {"min_age": 20, "max_age": 1000, "serious_under": 17.5, "light_under": 18.7, "normal": 22.0, "overweight": 26.5, "obese": 31.9}
+    {"min_age": 0, "max_age": 1, "serious_under": 13.4, "light_under": 14.4, "normal": 15.5, "overweight": 18.2, "obese": 19.8},
+    {"min_age": 2, "max_age": 2, "serious_under": 12.7, "light_under": 13.8, "normal": 14.8, "overweight": 17.3, "obese": 18.9},
+    {"min_age": 3, "max_age": 3, "serious_under": 12.4, "light_under": 13.4, "normal": 14.4, "overweight": 16.9, "obese": 18.4},
+    {"min_age": 4, "max_age": 4, "serious_under": 12.1, "light_under": 13.1, "normal": 14.1, "overweight": 16.7, "obese": 18.2},
+    {"min_age": 5, "max_age": 5, "serious_under": 12.0, "light_under": 12.9, "normal": 14.0, "overweight": 16.6, "obese": 18.3},
+    {"min_age": 6, "max_age": 6, "serious_under": 12.1, "light_under": 13.0, "normal": 14.1, "overweight": 16.8, "obese": 18.5},
+    {"min_age": 7, "max_age": 7, "serious_under": 12.3, "light_under": 13.0, "normal": 14.2, "overweight": 17.0, "obese": 19.0},
+    {"min_age": 8, "max_age": 8, "serious_under": 12.4, "light_under": 13.3, "normal": 14.4, "overweight": 17.4, "obese": 19.07},
+    {"min_age": 9, "max_age": 9, "serious_under": 12.6, "light_under": 13.5, "normal": 14.6, "overweight": 17.9, "obese": 20.5},
+    {"min_age": 10, "max_age": 10, "serious_under": 12.8, "light_under": 13.7, "normal": 14.9, "overweight": 18.5, "obese": 21.4},
+    {"min_age": 11, "max_age": 11, "serious_under": 13.1, "light_under": 14.1, "normal": 15.3, "overweight": 19.2, "obese": 22.5},
+    {"min_age": 12, "max_age": 12, "serious_under": 13.4, "light_under": 14.5, "normal": 15.8, "overweight": 19.9, "obese": 23.6},
+    {"min_age": 13, "max_age": 13, "serious_under": 13.8, "light_under": 14.9, "normal": 16.4, "overweight": 20.8, "obese": 24.8},
+    {"min_age": 14, "max_age": 14, "serious_under": 14.3, "light_under": 15.5, "normal": 17.0, "overweight": 21.8, "obese": 25.9},
+    {"min_age": 15, "max_age": 15, "serious_under": 15.7, "light_under": 16.0, "normal": 17.6, "overweight": 22.7, "obese": 27.0},
+    {"min_age": 16, "max_age": 16, "serious_under": 15.1, "light_under": 16.5, "normal": 18.2, "overweight": 23.5, "obese": 27.9},
+    {"min_age": 17, "max_age": 17, "serious_under": 15.4, "light_under": 16.9, "normal": 18.8, "overweight": 24.3, "obese": 28.6},
+    {"min_age": 18, "max_age": 10000, "serious_under": 15.7, "light_under": 17.3, "normal": 19.2, "overweight": 24.9, "obese": 29.2}
   ]
 }
